@@ -6,12 +6,12 @@ import FruitSlots from './FruitSlots'
 
 function SlotMachine() {
   return (
-    <div className='flex justify-center mt-20'>
-      <div>
+    <div className='flex justify-center mt-20 gap-4'>
+      <div className='flex flex-col gap-4'>
         <FruitSlots />
         <CashCredit />
       </div>
-      <div>
+      <div className='flex flex-col gap-4'>
         <SpinButton />
         <CashoutButton />
       </div>
