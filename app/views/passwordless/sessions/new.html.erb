@@ -8,3 +8,6 @@
     <%= f.submit I18n.t('passwordless.sessions.new.submit'), class: "bg-sky-500 font-medium px-3 py-2 text-white w-full text-center hover:bg-sky-600 cursor-pointer rounded" %> 
   <% end %>
 </div>
+<%= content_tag(:div, "", id: 'app', data: {
+  controller: 'react'
+}) %>

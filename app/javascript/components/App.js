@@ -1,15 +1,19 @@
 import React from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
+import SlotMachine from './slot_machine/SlotMachine'
+import Home from './Home'
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="/sign_out" element={<SignIn />} />
-        
+        <Route path="/" element={<Home />} />
+        <Route path="/users/sign_in" element={<SignIn />} />
+        <Route path="/users/new" element={<SignUp />} />
+        <Route path="game/start" element={<SlotMachine />} />
       </Routes>
       
     </Router>

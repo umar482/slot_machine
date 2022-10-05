@@ -2,3 +2,6 @@
   <h1 class="font-black text-2xl mb-6">Create an account</h1>
   <%= render "form", user: @user %>
 </div>
+<%= content_tag(:div, "", id: 'app', data: {
+  controller: 'react'
+}) %>
