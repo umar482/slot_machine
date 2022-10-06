@@ -10,10 +10,10 @@ class GameController < ApplicationController
   end
 
   def spin
-    render json: { status: :success}
+    render json: { status: :success, credit: 10}
   end
 
   def cashout
-    render json: { status: :success}
+    render json: { status: :success, credit: 10}
   end
 end
