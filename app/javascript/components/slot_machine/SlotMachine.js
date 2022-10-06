@@ -1,19 +1,28 @@
-import React from 'react'
-import SpinButton from './SpinButton'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import CashCredit from './CashCredit'
-import CashoutButton from './CashoutButton'
 import FruitSlots from './FruitSlots'
+import GameButtons from './buttons/GameButtons'
+import { Start } from '../../store/actions/GameActions'
 
-function SlotMachine() {
+const SlotMachine = () => {
+  const dispatch = useDispatch()
+  const currentCredit = useSelector(state => state.Game.credit)
+  
+  useEffect(() => {
+    dispatch(Start())
+  }, [dispatch])
+
   return (
     <div className='flex justify-center mt-20 gap-4'>
       <div className='flex flex-col gap-4'>
         <FruitSlots />
         <CashCredit />
       </div>
-      <div className='flex flex-col gap-4'>
-        <SpinButton />
-        <CashoutButton />
+      <div>
+        <GameButtons
+          currentCredit={currentCredit}
+        />
       </div>
     </div>
   )

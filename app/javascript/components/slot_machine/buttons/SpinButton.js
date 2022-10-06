@@ -1,8 +1,8 @@
 import React from 'react'
-import { Spin } from '../../store/actions/GameActions'
+import { Spin } from '../../../store/actions/GameActions'
 import { useDispatch } from 'react-redux'
 
-function SpinButton() {
+const SpinButton = ({ spin }) => {
   const dispatch = useDispatch()
 
   const requestSpin = (event) => {

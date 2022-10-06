@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cashout } from '../../store/actions/GameActions'
+import { Cashout } from '../../../store/actions/GameActions'
 import { useDispatch } from 'react-redux'
 
 function CashoutButton() {

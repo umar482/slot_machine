@@ -6,10 +6,12 @@ export const initialState = {
 
 const GameReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'START_GAME':
+      return { ...state, credit: action.payload.data.credit, spinning: false }
     case 'SPIN_FRUITS':
-      return { ...state, credit: action.payload, spinning: true }
+      return { ...state, credit: action.payload.data.credit, spinning: true }
     case 'CASHOUT':
-      return { ...state, credit: action.payload, spinning: false }
+      return { ...state, credit: action.payload.data.credit, spinning: false }
     default:
       return state
   }
