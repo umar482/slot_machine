@@ -4,16 +4,4 @@ class GameController < ApplicationController
   def index
   end
   
-  def start
-    render json: { status: :success, credit: 10}
-
-  end
-
-  def spin
-    render json: { status: :success, credit: 10}
-  end
-
-  def cashout
-    render json: { status: :success, credit: 10}
-  end
 end

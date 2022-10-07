@@ -1,25 +1,17 @@
 import React from 'react'
 import SpinButton from './SpinButton'
 import CashoutButton from './CashoutButton'
-import StartButton from './StartButton'
+import { useSelector } from 'react-redux'
 
 const GameButtons = ({ currentCredit, start, roll, cashout }) => {
+  // const items = useSelector(state => state.Game.fruits)
 
-  if (currentCredit) {
     return (
-      <div className='flex flex-col gap-4'>
+      <div className='flex justify-center gap-4'>
         <SpinButton />
         <CashoutButton />
       </div>
     )
-  }
-  else {
-    return (
-      <div>
-        <StartButton />
-      </div>
-    )
-  }
   
 }
 

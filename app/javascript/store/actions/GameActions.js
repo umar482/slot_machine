@@ -1,10 +1,15 @@
 import axios from "axios"
 
-export const Start = () => {
+export const Intailize = () => {
   return async (dispatch) => {
     dispatch({
-      type: "START_GAME",
-      payload: await axios.get("/game/start")
+      type: "INTIALIZE",
+      payload: await axios.get("/api/v1/game/intailize", {
+        headers: {
+          // Overwrite Axios's automatically set Content-Type
+          'Content-Type': 'application/json'
+        }
+      })
     })
   }
 }
@@ -12,8 +17,8 @@ export const Start = () => {
 export const Spin = () => {
   return async (dispatch) => {
     dispatch({
-      type: "SPIN_FRUITS",
-      payload: await axios.get("/game/spin")
+      type: "SPIN",
+      payload: await axios.get("/api/v1//game/spin")
     })
   }
 }
@@ -22,7 +27,7 @@ export const Cashout = () => {
   return async (dispatch) => {
     dispatch({
       type: "CASHOUT",
-      payload: await axios.get("/game/cashout")
+      payload: await axios.get("/api/v1//game/cashout")
     })
   }
 }
