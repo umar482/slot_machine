@@ -1,33 +1,36 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState} from 'react'
 import { Cashout } from '../../../store/actions/GameActions'
 import { useDispatch } from 'react-redux'
 import { takeChance, cssStyles } from '../../utils'
 
 function CashoutButton() {
-  const cashoutButton = useRef(null);
-  const disabledCashout = takeChance(40) ? true : false;
+  const cashoutButton = useRef();
+  const style = useRef();
+  const dispatch = useDispatch()
+  const [disable, setDisable] = useState(false);
 
   const addStyle = () => {
-    const cashoutStyle = takeChance(50) ? randomStyle() : null;
-    cashoutButton.current.style.removeProperty('left')
-    cashoutButton.current.style.removeProperty('right')
-    cashoutButton.current.style.removeProperty('top')
-    cashoutButton.current.style.position = "relative";
-    cashoutButton.current.style[cashoutStyle] = "300px";
-    // const disableButton = disabledCashout
-    // if (disableButton) {
-    //   cashoutButton.current.classList.add('pointer-events-none')
-    // }
+    if(takeChance(50)){
+      randomStyle()
+    }else {
+      takeChance(40) ? setDisable(true) : setDisable(false)
+    }
   };
 
-  function randomStyle() {
-    return cssStyles[Math.floor(Math.random() * cssStyles.length)];
+  const randomStyle = () => {
+    const cashoutStyle = cssStyles[Math.floor(Math.random() * cssStyles.length)];
+    if(cashoutButton.current.style[cashoutStyle] == "300px"){
+      randomStyle()
+    }else{
+      cashoutButton.current.style[style.current] = ""
+      cashoutButton.current.style[cashoutStyle] = "300px"
+      style.current = cashoutStyle
+    }
   }
-    
 
-  const dispatch = useDispatch()
 
-  const requestCashout = (event) => {
+
+  const requestCashout = () => {
     dispatch(Cashout())
   }
 
@@ -35,8 +38,8 @@ function CashoutButton() {
     <button
       ref={cashoutButton}
       onMouseOver={addStyle}
-      disabled={disabledCashout}
-      className='bg-yellow-300 p-3 border-yellow-300 border-2 text-center text-2xl rounded cursor-pointer' onClick={requestCashout}>
+      disabled={disable}
+      className='bg-yellow-300 p-3 border-yellow-300 border-2 text-center text-2xl rounded cursor-pointer relative w-full disabled:opacity-75' onClick={requestCashout}>
       Cashout
     </button>
   )

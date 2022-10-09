@@ -13,6 +13,7 @@ class Api::V1::GameController < ApplicationController
   end
 
   def cashout
+    SlotMachineService.new(session).cashout
     render json: { credit: 0 }
   end
 

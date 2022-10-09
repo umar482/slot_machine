@@ -9,6 +9,7 @@ class SlotMachineService
   def has_credit?
     session[:credit] > 0
   end
+
   def credit
     credit_service.intialize_credit
   end
@@ -30,6 +31,11 @@ class SlotMachineService
   def credit_update
     credit_service.update_credit(spin_service.credit)
   end
+
+  def cash_out
+    credit_service.cash_out
+  end
+
   
   private
 

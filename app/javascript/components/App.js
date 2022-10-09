@@ -5,13 +5,12 @@ import SlotMachine from './slot_machine/SlotMachine'
 import Home from './Home'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import DummySlotMachine from './slot_machine/DummySlotMachine'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<DummySlotMachine />} />
+        <Route path="/" element={<SlotMachine />} />
         <Route path="/users/sign_in" element={<SignIn />} />
         <Route path="/users/new" element={<SignUp />} />
         <Route path="game/index" element={<SlotMachine />} />
