@@ -1,5 +1,9 @@
 # **Slot Machine**
 
+## **Demo Link**
+
+https://slot-machine-softaims.herokuapp.com/
+
 ## **Description**
  The application is built using latest **Rails 7.0** for backend server and **React 18** for the front-end application. The database used is **pgSQL.**
 
