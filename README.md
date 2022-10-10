@@ -19,8 +19,7 @@ Run the below command to run all test cases for the application
 
 # Testing the frontend
 
-Run the below command to test the application
- - `npm test` or `yarn test`
+**Test cases for react are pending for now. If you say so, they can also be added in one day time.**
 
 # Assumptions
 * When a player starts a game/session, they are allocated 10 credits. 
