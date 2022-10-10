@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
   const dispatch = useDispatch()
   const spinning = useSelector(state => state.Game.spinning)
   const items = useSelector(state => state.Game.slots)
-  const boxes = document.querySelectorAll('.boxes');
+  const boxes = document.querySelectorAll('.slot-box');
   let pool = ["🍒", "🍋", "🍊", "🍉"]
   let index = 0
 
@@ -42,7 +42,7 @@ import { useDispatch, useSelector } from 'react-redux'
       boxes[index].innerHTML = ""
       for (let i = 0; i <= pool.length - 1; i++) {
          const box = document.createElement('div');
-         box.classList.add('box');
+         box.classList.add('slot-content');
          box.textContent = pool[i];
          boxes[index].appendChild(box);
          boxes[index].style.animation = `spin .4s linear infinite`
@@ -57,7 +57,7 @@ import { useDispatch, useSelector } from 'react-redux'
       return
     setTimeout(() => {
       const box = document.createElement('div');
-      box.classList.add('box');
+      box.classList.add('slot-content');
       box.textContent = items[index];
       boxes[index].innerHTML = ""
       boxes[index].appendChild(box)
@@ -76,27 +76,27 @@ import { useDispatch, useSelector } from 'react-redux'
 
   return (
     <div className="w-full h-full bg-[#1a2b45] border-2 flex flex-col justify-center items-center">
-      <div className="doors flex">
+      <div className="slots flex">
       
-        <div className="door bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
-          <div className="boxes">
-            <div className='box'>
+        <div className="slot bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
+          <div className="slot-box">
+            <div className='slot-content'>
                 ❓
             </div>
           </div>
         </div>
 
-        <div className="door bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
-          <div className="boxes">
-            <div className='box'>
+        <div className="slot bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
+          <div className="slot-box">
+            <div className='slot-content'>
                 ❓
             </div>
           </div>
         </div>
 
-        <div className="door bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
-          <div className="boxes">
-            <div className='box'>
+        <div className="slot bg-[#fafafa] w-24 h-24 overflow-hidden rounded m-2.5">
+          <div className="slot-box">
+            <div className='slot-content'>
                 ❓
             </div>
          </div>
