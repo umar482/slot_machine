@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 describe Api::V1::GameController, type: :controller do
-  describe "#initialize" do
+  describe "#intailize" do
     it "successfully renders" do
-      get :initialize
+      get :intailize
 
       expect(response).to be_successful
     end
 
     it "get credit in response" do
-      get :initialize
+      get :intailize
       parsed_response = JSON.parse(response.body)
 
       expect(parsed_response["credit"]).to eq(10)

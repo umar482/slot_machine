@@ -3,7 +3,6 @@ class SlotMachineService
 
   def initialize(session)
     @session = session
-
   end
 
   def has_credit?
