@@ -44,7 +44,6 @@ class GameMachine
   end
 
   def get_random_symbols
-    # debugger
     ([1, 2, 3]).map { game_symbols.shuffle[0, 1].join }
   end
 end

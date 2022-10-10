@@ -25,7 +25,7 @@ class SlotMachineService
   end
 
   def spinned_slots
-     spin
+    spin
   end
 
   def credit_update

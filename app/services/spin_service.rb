@@ -39,6 +39,6 @@ class SpinService
   end
 
   def credit
-      SLOTS[new_roll.first] if is_jackpot?
+    SLOTS[new_roll.first] if is_jackpot?
   end
 end
